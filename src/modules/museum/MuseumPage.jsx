@@ -38,8 +38,8 @@ export function MuseumPage() {
     <div className="space-y-8">
       <header className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-display font-semibold text-oxblood-700">The Museum</h1>
-          <p className="text-charcoal-light mt-1">Every moment we've kept, on display.</p>
+          <h1 className="text-3xl font-display font-semibold text-ivory-100">The Museum</h1>
+          <p className="text-blush-300 mt-1">Every moment we've kept, on display.</p>
         </div>
         <HiddenNoteReveal label="Find a hidden note" />
       </header>
@@ -68,8 +68,8 @@ export function MuseumPage() {
             <PhotoGrid photos={filtered} onSelect={(i) => setLightbox({ photos: filtered, index: i })} />
           )}
 
-          <section aria-labelledby="special-exhibit-heading" className="pt-6 border-t border-oxblood-100/60">
-            <h2 id="special-exhibit-heading" className="text-xl font-display font-semibold text-oxblood-700 mb-4">
+          <section aria-labelledby="special-exhibit-heading" className="pt-6 border-t border-oxblood-700/60">
+            <h2 id="special-exhibit-heading" className="text-xl font-display font-semibold text-ivory-100 mb-4">
               Special Exhibit
             </h2>
             <SpecialExhibit

@@ -48,8 +48,8 @@ export function FavoritesPage() {
     <div className="space-y-10">
       <header className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-display font-semibold text-oxblood-700">Favorites Hub</h1>
-          <p className="text-charcoal-light mt-1">Your songs, your quotes, our list of things to do.</p>
+          <h1 className="text-3xl font-display font-semibold text-ivory-100">Favorites Hub</h1>
+          <p className="text-blush-300 mt-1">Your songs, your quotes, our list of things to do.</p>
         </div>
         <ShuffleFavorite />
       </header>
@@ -61,7 +61,7 @@ export function FavoritesPage() {
         <>
           {byType.surprise.length > 0 && (
             <section aria-labelledby="surprises-heading">
-              <h2 id="surprises-heading" className="text-xl font-display font-semibold text-oxblood-700 mb-3">
+              <h2 id="surprises-heading" className="text-xl font-display font-semibold text-ivory-100 mb-3">
                 Surprises
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -81,22 +81,22 @@ export function FavoritesPage() {
           )}
 
           <section aria-labelledby="music-heading">
-            <h2 id="music-heading" className="text-xl font-display font-semibold text-oxblood-700 mb-3">Music</h2>
+            <h2 id="music-heading" className="text-xl font-display font-semibold text-ivory-100 mb-3">Music</h2>
             <MusicSection items={byType.music} />
           </section>
 
           <section aria-labelledby="quotes-heading">
-            <h2 id="quotes-heading" className="text-xl font-display font-semibold text-oxblood-700 mb-3">Quotes</h2>
+            <h2 id="quotes-heading" className="text-xl font-display font-semibold text-ivory-100 mb-3">Quotes</h2>
             <QuotesCarousel items={byType.quote} />
           </section>
 
           <section aria-labelledby="todos-heading">
-            <h2 id="todos-heading" className="text-xl font-display font-semibold text-oxblood-700 mb-3">To-do together</h2>
+            <h2 id="todos-heading" className="text-xl font-display font-semibold text-ivory-100 mb-3">To-do together</h2>
             <TodoSection items={byType.todo} onToggle={handleToggle} onAdd={handleAddTodo} />
           </section>
 
           <section aria-labelledby="links-heading">
-            <h2 id="links-heading" className="text-xl font-display font-semibold text-oxblood-700 mb-3">Links & videos</h2>
+            <h2 id="links-heading" className="text-xl font-display font-semibold text-ivory-100 mb-3">Links & videos</h2>
             {byType.link.length + byType.video.length === 0 ? (
               <EmptyState icon={Link2} title="Nothing saved yet" description="Add favorites with type = 'link' or 'video' in Supabase." />
             ) : (

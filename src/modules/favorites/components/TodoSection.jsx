@@ -28,9 +28,15 @@ export function TodoSection({ items, onToggle, onAdd }) {
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           placeholder="Add something for us to do..."
-          className="flex-1 rounded-full border border-oxblood-100 bg-white px-4 py-2.5 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-crimson-500"
+          className="flex-1 rounded-full border border-oxblood-100 bg-white px-4 py-2.5 text-sm text-charcoal focus-visible:outline focus-visible:outline-2 focus-visible:outline-crimson-500"
         />
-        <Button type="submit" variant="secondary" icon={Plus} aria-label="Add to-do">
+        <Button
+          type="submit"
+          variant="secondary"
+          icon={Plus}
+          aria-label="Add to-do"
+          className="border-oxblood-400 text-blush-100 hover:bg-oxblood-700"
+        >
           Add
         </Button>
       </form>

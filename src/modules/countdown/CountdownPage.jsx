@@ -35,10 +35,10 @@ export function CountdownPage() {
   return (
     <div className="space-y-10 max-w-lg mx-auto">
       <header className="text-center">
-        <h1 className="text-3xl font-display font-semibold text-oxblood-700">
+        <h1 className="text-3xl font-display font-semibold text-ivory-100">
           {parts.isPast ? "It's your day" : 'Counting down to your day'}
         </h1>
-        {event?.description && <p className="text-charcoal-light mt-2">{event.description}</p>}
+        {event?.description && <p className="text-blush-300 mt-2">{event.description}</p>}
       </header>
 
       {isLoading && <SkeletonLines count={4} />}

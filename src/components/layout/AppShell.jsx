@@ -38,12 +38,16 @@ function AmbientBackground() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+      {/* Dark red wallpaper, matching the welcome screen */}
       <div
-        className={
-          isNight
-            ? 'absolute inset-0 bg-gradient-to-b from-oxblood-900 via-oxblood-800 to-oxblood-900'
-            : 'absolute inset-0 bg-gradient-to-b from-ivory-200 via-blush-50 to-ivory-300'
-        }
+        className="absolute inset-0"
+        style={{
+          backgroundColor: '#260B0B',
+          backgroundImage:
+            'repeating-linear-gradient(90deg, rgba(0,0,0,0.10) 0 1px, transparent 1px 64px), ' +
+            'repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 20px, transparent 20px 64px), ' +
+            'linear-gradient(165deg, #3A0F12 0%, #260B0B 55%, #170506 100%)',
+        }}
       />
       <div className="absolute inset-0 bg-grain" />
 
@@ -70,9 +74,7 @@ function AmbientBackground() {
             left: 'var(--x, 50%)',
             top: 'var(--y, 30%)',
             transform: 'translate(-50%, -50%)',
-            background: isNight
-              ? 'radial-gradient(circle, rgba(201,161,90,0.35), transparent 70%)'
-              : 'radial-gradient(circle, rgba(179,36,60,0.28), transparent 70%)',
+            background: 'radial-gradient(circle, rgba(179,36,60,0.30), transparent 70%)',
           }}
         />
       )}

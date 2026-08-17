@@ -20,7 +20,12 @@ export function ShuffleFavorite() {
 
   return (
     <>
-      <Button variant="secondary" icon={Shuffle} onClick={handleShuffle}>
+      <Button
+        variant="secondary"
+        icon={Shuffle}
+        onClick={handleShuffle}
+        className="border-oxblood-400 text-blush-100 hover:bg-oxblood-700"
+      >
         Shuffle a favorite
       </Button>
       <Modal isOpen={open} onClose={() => setOpen(false)} title="A little pairing" labelledBy="shuffle-title">

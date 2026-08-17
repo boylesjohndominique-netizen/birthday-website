@@ -22,13 +22,13 @@ export function HomePage() {
   return (
     <div className="space-y-10">
       <section aria-labelledby="home-heading" className="pt-4 sm:pt-10">
-        <p className="text-sm uppercase tracking-[0.2em] text-crimson-500 font-semibold mb-3">
+        <p className="text-sm uppercase tracking-[0.2em] text-gold-soft font-semibold mb-3">
           A private keepsake
         </p>
-        <h1 id="home-heading" className="text-4xl sm:text-5xl font-display font-semibold text-oxblood-700 leading-tight max-w-2xl">
+        <h1 id="home-heading" className="text-4xl sm:text-5xl font-display font-semibold text-ivory-100 leading-tight max-w-2xl">
           For {RECIPIENT_NAME}, with everything I have.
         </h1>
-        <p className="mt-4 text-charcoal-light max-w-xl">
+        <p className="mt-4 text-blush-300 max-w-xl">
           {isPast
             ? 'Happy birthday — everything here is for you.'
             : `${days} day${days === 1 ? '' : 's'} until your day. Until then, wander around — there's a lot here I made just for you.`}

@@ -8,9 +8,9 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-md bg-ivory-200/85 theme-night:bg-oxblood-900/85 border-b border-oxblood-100/50">
+    <header className="sticky top-0 z-40 backdrop-blur-md bg-oxblood-900/85 border-b border-oxblood-700/60">
       <nav className="mx-auto max-w-5xl px-4 sm:px-6 h-16 flex items-center justify-between" aria-label="Primary">
-        <NavLink to="/" className="flex items-center gap-2 font-display text-xl font-semibold text-oxblood-600">
+        <NavLink to="/" className="flex items-center gap-2 font-display text-xl font-semibold text-blush-100">
           <Heart size={20} className="text-crimson-500" fill="currentColor" aria-hidden="true" />
           <span className="hidden xs:inline">{APP_NAME}</span>
         </NavLink>
@@ -24,7 +24,7 @@ export function Navbar() {
                 className={({ isActive }) =>
                   cn(
                     'px-3 py-2 rounded-full text-sm font-medium transition-colors',
-                    isActive ? 'bg-crimson-500 text-ivory-100' : 'text-charcoal hover:bg-blush-100'
+                    isActive ? 'bg-crimson-500 text-ivory-100' : 'text-blush-200 hover:bg-oxblood-700 hover:text-ivory-100'
                   )
                 }
               >
@@ -36,7 +36,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="icon-btn sm:hidden"
+          className="icon-btn sm:hidden text-blush-200 hover:bg-oxblood-700"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -47,7 +47,7 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <ul id="mobile-menu" className="sm:hidden border-t border-oxblood-100/50 bg-ivory-200 px-4 py-2">
+        <ul id="mobile-menu" className="sm:hidden border-t border-oxblood-700/60 bg-oxblood-900 px-4 py-2">
           {NAV_ITEMS.map((item) => (
             <li key={item.to}>
               <NavLink
@@ -57,7 +57,7 @@ export function Navbar() {
                 className={({ isActive }) =>
                   cn(
                     'block px-3 py-3 rounded-lg text-base font-medium transition-colors',
-                    isActive ? 'bg-crimson-500 text-ivory-100' : 'text-charcoal hover:bg-blush-100'
+                    isActive ? 'bg-crimson-500 text-ivory-100' : 'text-blush-200 hover:bg-oxblood-700'
                   )
                 }
               >

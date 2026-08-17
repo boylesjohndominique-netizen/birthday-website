@@ -19,7 +19,7 @@ export function CandleInteraction({ onAllBlownOut }) {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <p className="text-sm text-charcoal-light">
+      <p className="text-sm text-blush-300">
         {allOut ? 'Make a wish. I hope it already came true.' : 'Tap each candle to blow it out.'}
       </p>
       <div className="flex items-end gap-3" role="group" aria-label="Birthday candles">

@@ -29,7 +29,7 @@ export function HiddenNoteReveal({ unlockKey, label = 'Reveal a hidden note', tr
         type="button"
         onClick={handleOpen}
         aria-label={label}
-        className={triggerClassName || 'icon-btn'}
+        className={triggerClassName || 'icon-btn text-blush-200 hover:bg-oxblood-700'}
       >
         <Gift size={18} aria-hidden="true" />
       </button>

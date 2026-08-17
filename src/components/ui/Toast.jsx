@@ -37,7 +37,7 @@ export function ToastProvider({ children }) {
             ) : (
               <CheckCircle2 size={18} className="text-oxblood-500 shrink-0" aria-hidden="true" />
             )}
-            <span className="flex-1">{t.message}</span>
+            <span className="flex-1 text-charcoal">{t.message}</span>
             <button
               type="button"
               onClick={() => dismiss(t.id)}
