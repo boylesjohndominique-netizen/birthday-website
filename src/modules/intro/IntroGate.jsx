@@ -183,12 +183,15 @@ function Envelope({ stage, springX, springY, onSeal }) {
             className="relative w-[min(92vw,30rem)] aspect-[30/19]"
             style={{ perspective: 1000 }}
           >
-            {/* The letter inside — rises out when the seal breaks */}
+            {/* The letter inside — parked at rest (y: 0) it sits fully within
+                the envelope, hidden behind the opaque pocket. When the seal
+                breaks it rises out in front of the folded flap (zIndex follows
+                the rise, so it never flashes over the closed flap). */}
             <motion.div
-              className="absolute inset-x-3 top-2 bottom-2 z-[15] rounded-lg border border-oxblood-100/60 bg-ivory-100 shadow-card"
+              className="absolute inset-x-3 top-2 bottom-2 rounded-lg border border-oxblood-100/60 bg-ivory-100 shadow-card"
               initial={false}
-              animate={{ y: opened ? '-60%' : '118%' }}
-              transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
+              animate={opened ? { y: '-60%', zIndex: 40 } : { y: '0%', zIndex: 15 }}
+              transition={{ duration: 0.7, delay: 0.45, ease: 'easeOut' }}
             >
               <div
                 aria-hidden="true"
