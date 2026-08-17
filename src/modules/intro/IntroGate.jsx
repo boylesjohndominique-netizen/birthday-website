@@ -78,7 +78,6 @@ function FloatingShapes({ springX, springY }) {
  */
 export function IntroGate({ onOpen }) {
   const [stage, setStage] = useState(STAGE.SEALED);
-  const { isNight } = useTheme();
 
   // Springs shared by the envelope tilt and the floating shapes.
   const cursorX = useMotionValue(0);
@@ -107,20 +106,26 @@ export function IntroGate({ onOpen }) {
       role="dialog"
       aria-modal="true"
       aria-label="Welcome letter"
-      className={`fixed inset-0 z-50 overflow-y-auto ${isNight ? 'bg-oxblood-900' : 'bg-ivory-200'}`}
+      className="fixed inset-0 z-50 overflow-y-auto"
+      style={{
+        // Deep red wallpaper: vertical pin-stripes over a rich red gradient.
+        backgroundColor: '#260B0B',
+        backgroundImage:
+          'repeating-linear-gradient(90deg, rgba(0,0,0,0.10) 0 1px, transparent 1px 64px), ' +
+          'repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 20px, transparent 20px 64px), ' +
+          'linear-gradient(165deg, #3A0F12 0%, #260B0B 55%, #170506 100%)',
+      }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, scale: 1.06 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
     >
-      {/* Soft halo behind the envelope, then paper grain over it */}
+      {/* Warm glow behind the envelope, then paper grain over it */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
-          background: isNight
-            ? 'radial-gradient(ellipse 70% 55% at 50% 42%, rgba(92,26,27,0.55), transparent 70%)'
-            : 'radial-gradient(ellipse 70% 55% at 50% 42%, rgba(255,253,251,0.95), transparent 70%)',
+          background: 'radial-gradient(ellipse 70% 55% at 50% 42%, rgba(179,36,60,0.32), transparent 70%)',
         }}
       />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grain" />
@@ -148,7 +153,7 @@ export function IntroGate({ onOpen }) {
       <button
         type="button"
         onClick={onOpen}
-        className={`absolute bottom-5 right-5 rounded-full px-3 py-1.5 text-sm underline-offset-4 transition-colors hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson-500 ${isNight ? 'text-blush-300 hover:text-ivory-100' : 'text-oxblood-400 hover:text-oxblood-600'}`}
+        className="absolute bottom-5 right-5 rounded-full px-3 py-1.5 text-sm text-blush-300 underline-offset-4 transition-colors hover:text-ivory-100 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crimson-500"
       >
         {INTRO.skip}
       </button>
@@ -158,7 +163,7 @@ export function IntroGate({ onOpen }) {
 
 function Envelope({ stage, springX, springY, onSeal }) {
   const opened = stage === STAGE.OPENING;
-  const { isNight, prefersReducedMotion } = useTheme();
+  const { prefersReducedMotion } = useTheme();
   const tiltX = useTransform(springX, (v) => (prefersReducedMotion ? 0 : v * 9));
   const tiltY = useTransform(springY, (v) => (prefersReducedMotion ? 0 : v * 7));
 
@@ -168,7 +173,7 @@ function Envelope({ stage, springX, springY, onSeal }) {
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.35, ease: 'easeInOut' }}
     >
-      <p className="mb-8 text-center text-xs uppercase tracking-[0.3em] text-crimson-500 font-semibold">
+      <p className="mb-8 text-center text-xs uppercase tracking-[0.3em] text-gold-soft font-semibold">
         {INTRO.overline}
       </p>
 
@@ -223,7 +228,7 @@ function Envelope({ stage, springX, springY, onSeal }) {
                 <p className="text-[0.62rem] uppercase tracking-[0.35em] text-oxblood-400/80">
                   {INTRO.envelopeTo}
                 </p>
-                <p className="mt-1.5 font-script text-4xl leading-none text-oxblood-600">
+                <p className="mt-1.5 font-script text-5xl leading-none text-oxblood-600">
                   {INTRO.recipientName}
                 </p>
               </div>
@@ -271,7 +276,7 @@ function Envelope({ stage, springX, springY, onSeal }) {
       </motion.div>
 
       <motion.p
-        className={`mt-10 text-sm ${isNight ? 'text-blush-300' : 'text-charcoal-light'}`}
+        className="mt-10 text-sm text-blush-300"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.6 }}
@@ -283,8 +288,6 @@ function Envelope({ stage, springX, springY, onSeal }) {
 }
 
 function Letter({ onOpen }) {
-  const { isNight } = useTheme();
-
   return (
     <motion.div
       className="relative w-[min(92vw,36rem)] rounded-keepsake bg-ivory-100 p-8 shadow-[0_40px_90px_-24px_rgba(92,26,27,0.45)] sm:p-12"
@@ -325,10 +328,10 @@ function Letter({ onOpen }) {
           {INTRO.cta}
         </button>
 
-        <p className={`mt-10 font-script text-3xl ${isNight ? 'text-blush-300' : 'text-crimson-500'}`}>
+        <p className="mt-10 font-script text-3xl text-crimson-500">
           {INTRO.signature}
         </p>
-        <p className={`mt-3 text-xs tracking-wide ${isNight ? 'text-blush-300/70' : 'text-oxblood-300/70'}`}>
+        <p className="mt-3 text-xs tracking-wide text-oxblood-300/70">
           {APP_NAME}
         </p>
       </div>
