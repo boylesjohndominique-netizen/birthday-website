@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Heart, Sparkle, Star } from 'lucide-react';
 import { INTRO, APP_NAME } from '../../lib/constants.js';
+import { playSealChime } from '../../lib/sound.js';
 import { useTheme } from '../../app/providers/ThemeProvider.jsx';
 
 const STAGE = { SEALED: 'sealed', OPENING: 'opening', LETTER: 'letter' };
@@ -135,7 +136,10 @@ export function IntroGate({ onOpen }) {
               stage={stage}
               springX={springX}
               springY={springY}
-              onSeal={() => setStage(STAGE.OPENING)}
+              onSeal={() => {
+                playSealChime();
+                setStage(STAGE.OPENING);
+              }}
             />
           )}
         </AnimatePresence>
