@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: theme('fontFamily.display');
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background-color: theme('colors.crimson.200');
+    color: theme('colors.oxblood.800');
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.crimson.500');
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* night theme overrides, toggled via .theme-night on <html> */
+  .theme-night {
+    color-scheme: dark;
+  }
+  .theme-night body {
+    background-color: theme('colors.oxblood.900');
+    color: theme('colors.blush.100');
+  }
+}
+
+@layer components {
+  .surface-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-keepsake shadow-card border border-oxblood-100/40;
+  }
+
+  .theme-night .surface-card {
+    @apply bg-oxblood-800/70 border-oxblood-700/60;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-crimson-500 px-5 py-2.5 min-h-[44px] text-ivory-100 font-body font-semibold shadow-soft transition-transform duration-200 hover:bg-crimson-600 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-crimson-700 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-oxblood-300 bg-transparent px-5 py-2.5 min-h-[44px] text-oxblood-600 font-body font-semibold transition-colors duration-200 hover:bg-blush-100 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .theme-night .btn-secondary {
+    @apply text-blush-100 border-oxblood-400 hover:bg-oxblood-700;
+  }
+
+  .icon-btn {
+    @apply inline-flex items-center justify-center h-11 w-11 rounded-full text-oxblood-500 hover:bg-blush-100 transition-colors duration-150 active:scale-90;
+  }
+
+  .theme-night .icon-btn {
+    @apply text-blush-200 hover:bg-oxblood-700;
+  }
+
+  .tag-pill {
+    @apply inline-flex items-center rounded-full bg-blush-100 text-oxblood-600 text-xs font-medium px-3 py-1;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-blush-100 rounded-lg;
+  }
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+}

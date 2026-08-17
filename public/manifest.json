@@ -1,0 +1,15 @@
+{
+  "name": "A Keepsake, For You",
+  "short_name": "Keepsake",
+  "description": "A private interactive keepsake, made with love.",
+  "theme_color": "#5C1A1B",
+  "background_color": "#FBF6EF",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
