@@ -6,7 +6,6 @@ export const RECIPIENT_NAME = import.meta.env.VITE_RECIPIENT_NAME || 'My Love';
 export const BIRTHDAY_EVENT_KEY = import.meta.env.VITE_BIRTHDAY_EVENT_KEY || 'birthday';
 
 // Fallback birthday used only if Supabase has no matching event row yet (demo mode).
-// TODO(user): set the real date in Supabase `events` table, event_key = 'birthday'.
 export const FALLBACK_BIRTHDAY_ISO = '2026-12-31T00:00:00+08:00';
 
 // Simple client-side "secret mode" gate for a bit of surprise UX.
