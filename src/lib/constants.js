@@ -14,6 +14,20 @@ export const SECRET_PASSPHRASE = import.meta.env.VITE_SECRET_PASSPHRASE || 'ourf
 
 export const APP_NAME = 'A Keepsake, For You';
 
+// Copy for the welcome envelope that opens the app on every visit.
+export const INTRO = {
+  overline: 'A private keepsake',
+  hint: 'Tap the seal to open',
+  envelopeName: `For ${RECIPIENT_NAME}`,
+  letterTitle: `For ${RECIPIENT_NAME}, with everything I have.`,
+  letterBody:
+    'A little world of ours — photos, favorites, notes, and games. ' +
+    'Take your time wandering; it was made slowly, like all good things.',
+  cta: 'Open the keepsake',
+  skip: 'Skip for now',
+  signoff: 'A keepsake, from me to you.',
+};
+
 export const NAV_ITEMS = [
   { to: '/', label: 'Home', end: true },
   { to: '/museum', label: 'Museum' },
