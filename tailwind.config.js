@@ -58,6 +58,7 @@ export default {
         display: ['"Cormorant Garamond"', 'ui-serif', 'Georgia', 'serif'],
         body: ['"Karla"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        script: ['"Great Vibes"', '"Segoe Script"', 'cursive'],
       },
       boxShadow: {
         soft: '0 8px 30px -12px rgba(92, 26, 27, 0.35)',

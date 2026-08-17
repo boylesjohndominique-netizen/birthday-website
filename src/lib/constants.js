@@ -18,14 +18,15 @@ export const APP_NAME = 'A Keepsake, For You';
 export const INTRO = {
   overline: 'A private keepsake',
   hint: 'Tap the seal to open',
-  envelopeName: `For ${RECIPIENT_NAME}`,
+  envelopeTo: 'To',
+  recipientName: RECIPIENT_NAME,
   letterTitle: `For ${RECIPIENT_NAME}, with everything I have.`,
   letterBody:
     'A little world of ours — photos, favorites, notes, and games. ' +
     'Take your time wandering; it was made slowly, like all good things.',
   cta: 'Open the keepsake',
   skip: 'Skip for now',
-  signoff: 'A keepsake, from me to you.',
+  signature: 'With everything I have,',
 };
 
 export const NAV_ITEMS = [
